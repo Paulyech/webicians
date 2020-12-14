@@ -19,6 +19,18 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <style>
+        .div_border{
+        width:60%;
+        margin:0 auto;
+        border:1px solid #ccc;
+        }
+        .has-error
+        {
+        border-color:#cc0000;a
+        background-color:#ffff99;
+        }
+        </style>
 </head>
 <body >
     <div id="app">

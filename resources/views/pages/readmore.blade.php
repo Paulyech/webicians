@@ -156,29 +156,36 @@
 </div>
   <div class="contact-section pb-4 bg-dark">
    <div class="container-fluid">
-       <div class="contact-header text-center">
-           <h1 class="text-capitalize text-white"><strong>get in touch</strong></h1>
-       </div>
-       <div class="row justify-content-between">
-           <div class="col-md-6">
-               <form action="" class="text-capitalize  contform" >
-                   
-                   <div class="form-group ">
-                       <label for="name">name</label><br>
-                       <input type="text" class="form-control" placeholder="Enter your name">
-                   </div>
-                   <div>
-                       <label for="mail">Email</label><br>
-                       <input type="text" class="form-control" placeholder="Your email">
-                   </div>
-                   <div>
-                       <label for="message">message</label><br>
-                       <textarea name="message" id="" cols="30" rows="7" class="form-control" placeholder="Enter text"></textarea>
-                   </div>
-                   <input type="submit" value="submit" class="btn-primary btn btnn btn-primary:hover">
-               </form> 
-           </div>
+    <br />
+    <br />
+    <br />
+    <div class="contact-header text-center">
+      <h1 class="text-capitalize text-white"><strong>get in touch</strong></h1>
+   </div>
+    <div class="container" style="width:65%">
+            @if (count($errors) > 0)
+            <div class="alert alert-danger">
+                <button type="button" class="close" data-dismiss="alert">×</button>
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                    @endforeach
+                </ul>
+            </div>
+            @endif
+            @if ($message = Session::get('success'))
+        <div class="alert alert-success alert-block">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <strong>{{ $message }}</strong>
+        </div>
+        @endif
+    </div>
 
+    <div class="row justify-content-between">
+        <div class="col-md-6">
+          @include('emailsend')
+        </div>
+        
            <div class="col-md-4">
                <div class="contact-info">
                    <div class="d-block mb-5">
@@ -204,10 +211,11 @@
           <div class=" social-md-sites text-center">
               <ul >
                   <li> <a href="https://www.facebook.com/Webicians"><i class="fab fa-facebook"></i></a></li>
-                  <li><a href=""><i class="fab fa-twitter"></i></a></li>
-                  <li><a href=""><i class="fab fa-instagram"></i></a></li>
-                  <li><a href=""><i class="fab fa-linkedin-in"></i></a></li>
-                  <li><a href=""><i class="fab fa-github"></i></a></li>
+                  <li><a href="https://twitter.com/webicians"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="https://www.instagram.com/webicianske/"><i class="fab fa-instagram"></i></a></li>
+                  <li><a href="https://www.linkedin.com/in/webicians-ke-458ba0201/"><i class="fab fa-linkedin-in"></i></a></li>
+                  <li><a href="https://github.com/webicians"><i class="fab fa-github"></i></a></li>
+                  <li><a href=""><i class="fab fa-whatsapp"></i></a></li>
 
               </ul>
               <p class="text-white text-capitalize text-center">

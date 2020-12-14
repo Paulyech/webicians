@@ -23,3 +23,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [App\Http\Controllers\PagesController::class, 'index'])->name('index');
 Route::get('/readmore', [App\Http\Controllers\PagesController::class, 'readmore'])->name('readmore');
 
+Route::get('/contact', [App\Http\Controllers\EmailController::class, 'index']);
+Route::post('/sendemail/send', [App\Http\Controllers\EmailController::class, 'send']);
+
